@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NickTwo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceDust Lol</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body>
-  <h1>Это nicktwo.eu.org</h1>
-  <p>Сайт работает через GitHub Pages + Cloudflare</p>
-  <p>Точнее будет работать после одобрения*</p>
+<body class="space-bg overflow-hidden">
+    <div id="intro-screen" class="flex flex-col items-center justify-center min-h-screen text-white z-10 transition-opacity duration-1000">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center cosmic-text">Something will happen here as soon as the domain is approved.</h1>
+        <p class="text-xl md:text-2xl mb-8 text-center cosmic-text">Here's a mini-game for now, lol.</p>
+        <div class="text-8xl mb-8 animate-pulse">🚀</div>
+        <button id="play-btn" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-110 cosmic-btn">
+            Play Game
+        </button>
+    </div>
+
+    <div id="game-container" class="hidden relative w-full h-screen">
+        <canvas id="game-canvas" class="absolute inset-0"></canvas>
+        <div id="score-display" class="absolute top-4 left-4 text-white text-2xl font-bold z-20">Score: 0</div>
+        <div id="game-over" class="hidden absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 z-30">
+            <div class="text-center p-8 bg-gray-900 rounded-xl">
+                <h2 class="text-4xl font-bold text-red-500 mb-4">Game Over!</h2>
+                <p class="text-2xl text-white mb-6">Final Score: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-full text-lg font-bold">
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
 </html>
