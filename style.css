@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+.space-bg {
+    background: linear-gradient(to bottom, #000000, #0a0a2a, #000000);
+    position: relative;
+}
+.space-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.3) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.25) 2px, transparent 4px),
+        radial-gradient(white, rgba(255,255,255,.2) 3px, transparent 6px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+    background-size: 350px 350px, 550px 550px, 750px 750px, 250px 250px, 450px 450px;
+    background-position: 0 0, 40px 60px, 130px 270px, 200px 400px, 300px 100px;
+    animation: starsMove 200s linear infinite;
+    z-index: -1;
+}
+@keyframes starsMove {
+    from {
+        background-position: 0 0, 40px 60px, 130px 270px;
+    }
+    to {
+        background-position: 1000px 1000px, 400px 400px, 300px 300px;
+    }
+}
+
+.cosmic-text {
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff;
+    }
+    to {
+        text-shadow: 0 0 20px #00b3ff, 0 0 30px #00b3ff, 0 0 40px #00b3ff, 0 0 50px #00b3ff;
+    }
+}
+
+.cosmic-btn {
+    box-shadow: 0 0 15px #8a2be2, inset 0 0 10px rgba(138, 43, 226, 0.5);
+    animation: btnPulse 3s infinite;
+}
+
+@keyframes btnPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px #8a2be2, inset 0 0 10px rgba(138, 43, 226, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px #8a2be2, 0 0 35px #9370db, inset 0 0 15px rgba(138, 43, 226, 0.7);
+    }
+}
